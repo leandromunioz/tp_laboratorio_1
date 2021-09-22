@@ -54,7 +54,6 @@ double Operaciones(float numeroUno, float numeroDos, char operacion)
 			if(numeroDos == 0)
 			{
 				resultado = -999;
-				printf("No es posible dividir por 0.\n");
 			}
 			else
 			{
