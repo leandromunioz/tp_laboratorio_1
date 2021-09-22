@@ -102,23 +102,21 @@ long double CalculoFactorial(int valor)
 
 int ValidarFlotante(float numeroIngresado)
 {
-	int enteroDeNumeroIngresado;
 	float resultado;
-	int respuesta;
+	int retorno;
 
-	enteroDeNumeroIngresado = numeroIngresado;
-	resultado = numeroIngresado - enteroDeNumeroIngresado;
+	resultado = numeroIngresado - (int)numeroIngresado;
 
 	if(resultado != 0)
 	{
-		respuesta = 1;
+		retorno = 1;
 	}
 	else
 	{
-		respuesta = 0;
+		retorno = 0;
 	}
 
-	return respuesta;
+	return retorno;
 }
 
 char IngresarCaracter(char mensaje[])

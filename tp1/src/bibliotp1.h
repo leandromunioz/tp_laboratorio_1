@@ -23,7 +23,13 @@ double Operaciones(float numeroUno, float numeroDos, char operador);
 /// @param tipo de operacion a realizar
 /// @return devuelve el resultado de la operacion
 long double CalculoFactorial(int valor);
+///@brief Realiza el calculo del factorial
+/// @param primer numero a calcular el factorial
+/// @return devuelve el resultado de la operacion
 int ValidarFlotante(float numeroIngresado);
+///@brief Verifica que el numero ingresado sea un numero float o int
+/// @param  numero a validar
+/// @return devuelve el valor de verdad de la variable retorno.
 char IngresarCaracter(char mensaje[]); //Pide el ingreso de un caracter.
 int SumarNumero(int numeros[], int T); //Realiza la suma de números.
 int PedirEnteroValidadoEnRango(char[], int, int); //Pide numeros validados entre -1000 y 1000.
