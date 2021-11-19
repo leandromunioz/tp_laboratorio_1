@@ -179,5 +179,11 @@ int GetCaracter(char *pResultado, char *mensaje, char *mensajeError, char min, c
  /// @param cadena
  /// @return devuelve 0 si hubo error, 1 si fue ejecutada con exito.
  int GetName(char mensaje[],char mensajeError[] , char cadena[]);
+
+ ///@brief Funcion que confirma una accion
+ ///@param mensaje
+ ///@param confirmacion
+ ///@return devuelve la confirmacion s o n
+ int ConfirmarAccion(char *mensaje, char *compara);
 #endif /* FUNCIONES_H_ */
 

@@ -78,6 +78,17 @@ int ValidarNumero(char *cadena) {
 	return retorno;
 }
 
+int ConfirmarAccion(char *mensaje, char *compara)
+{
+	char respuesta[128];
+
+	printf("%s", mensaje);
+	fflush(stdin);
+	scanf("%[^\n]s", respuesta);
+
+	return strcmp(respuesta, compara);
+}
+
 int RetornarNombreCompleto(char nombre[], char apellido[],
 		char nombreCompleto[]) {
 
