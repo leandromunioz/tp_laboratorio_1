@@ -185,5 +185,19 @@ int GetCaracter(char *pResultado, char *mensaje, char *mensajeError, char min, c
  ///@param confirmacion
  ///@return devuelve la confirmacion s o n
  int ConfirmarAccion(char *mensaje, char *compara);
+
+ /// @brief funcion que valida un entero en rango
+ /// @param mensaje
+ /// @param min
+ /// @param max
+ /// @param numeroIngresado
+ /// @return  si hubo error si fue exitosa
+ int IngresarEnteroValidado(char mensaje[], int min, int max, int* numeroIngresado);
+
+ /// @brief funcion que pide el ingreso de un entero
+ /// @param mensaje
+ /// @param numeroIngresado
+ /// @return 0 error 1 exito
+ int IngresarEntero(char mensaje[], int* numeroIngresado);
 #endif /* FUNCIONES_H_ */
 

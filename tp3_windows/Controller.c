@@ -195,7 +195,64 @@ int controller_ListEmployee(LinkedList *pArrayListEmployee)
  *
  */
 int controller_sortEmployee(LinkedList *pArrayListEmployee) {
-return 1;
+	int retorno;
+	int option;
+	int subOption;
+	retorno = -1;
+
+	if(pArrayListEmployee != NULL)
+	{
+		do
+		{
+
+			printf("*order lista\n*"
+					"1-Ordenar Por Nombre\n"
+					"2-Ordenar Por Salario\n"
+					"3-Ordenar Por Horas de trabajo\n"
+					"4-salir\n");
+			IngresarEnteroValidado("Ingrese la opcion deseada: ", 1, 4, &option);
+			switch(option)
+			{
+			case 1:
+				printf("~Ordenar por nombre~\n"
+						"0. Ordenar de mayor a menor\n"
+						"1. Ordenar de menor a mayor\n"
+						"2. Salir\n");
+				IngresarEnteroValidado("Ingrese la opcion deseada: ", 0, 2, &subOption);
+
+				if(subOption != 2)
+				{
+					ll_sort(pArrayListEmployee, employee_compare_name, subOption);
+				}
+				break;
+
+			case 2:
+				printf("~Ordenar por Salario~\n"
+						"0. Ordenar de mayor a menor\n"
+						"1. Ordenar de menor a mayor\n"
+						"2. Salir\n");
+				IngresarEnteroValidado("Ingrese la opcion deseada: ", 0, 2, &subOption);
+				ll_sort(pArrayListEmployee, employee_compare_salary, subOption);
+				break;
+
+			case 3:
+				printf("~Ordenar por horas trabajadas~\n"
+						"0. Ordenar de mayor a menor\n"
+						"1. Ordenar de menor a mayor\n"
+						"2. Salir\n");
+				IngresarEnteroValidado("Ingrese la opcion deseada: ", 0, 2, &subOption);
+				ll_sort(pArrayListEmployee, employee_compare_hours, subOption);
+
+				break;
+			}
+
+		} while (option != 4);
+
+		retorno = 0;
+	}
+
+	return retorno;
+
 }
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).

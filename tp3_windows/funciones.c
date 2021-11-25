@@ -39,6 +39,51 @@ float IngresarNumero(char mensaje[], int *numeroIngresado) {
 	return retorno;
 }
 
+int IngresarEnteroValidado(char mensaje[], int min, int max, int* numeroIngresado)
+{
+	int retorno;
+
+	retorno = 0;
+
+	if(mensaje != NULL && numeroIngresado != NULL)
+	{
+		IngresarEntero(mensaje, numeroIngresado);
+		while(*numeroIngresado < min || *numeroIngresado > max)
+		{
+			printf("El numero ingresado no corresponde con los parametros. Debe estar en un rango entre %d hasta %d\n", min, max);
+			IngresarEntero(mensaje, numeroIngresado);
+		}
+		retorno = 1;
+	}
+
+	return retorno;
+}
+
+int IngresarEntero(char mensaje[], int* numeroIngresado)
+{
+	int retorno;
+	char cadena[4096];
+
+	retorno = 0;
+
+	if(numeroIngresado != NULL && mensaje != NULL)
+	{
+		printf("%s", mensaje);
+		scanf("%s", cadena);
+		while(ValidarNumero(cadena) == 0)
+		{
+			printf("Error, ingrese un valor numerico: ");
+			scanf("%s", cadena);
+		}
+
+		retorno = 1;
+		*numeroIngresado = atoi(cadena);
+	}
+
+
+	return retorno;
+}
+
 int PedirEnteroValidadoEnRango(char mensaje[], int minimo, int maximo) {
 
 	int numeroIngresado;

@@ -256,3 +256,85 @@ int employee_delete(Employee *this) {
 	return retorno;
 }
 
+
+
+int employee_compare_name(void *one, void *two)
+{
+	int retorno;
+	char nameOne[128];
+	char nameTwo[128];
+	Employee *first;
+	Employee *second;
+
+	retorno = -1;
+	first = (Employee*) one;
+	second = (Employee*) two;
+	employee_getNombre(first, nameOne);
+	employee_getNombre(second, nameTwo);
+	retorno = stricmp(nameOne, nameTwo);
+
+	return retorno;
+}
+
+int employee_compare_salary(void *one, void *two)
+{
+	int retorno;
+	int salaryOne;
+	int salaryTwo;
+	retorno = -1;
+	Employee *first;
+	Employee *second;
+
+	first = (Employee*) one;
+	second = (Employee*) two;
+
+	if((employee_getSueldo(first, &salaryOne) == 0) && (employee_getSueldo(second, &salaryTwo) == 0))
+	{
+		retorno = 0;
+		if (salaryOne < salaryTwo)
+		{
+			retorno = 1;
+		}
+		else
+		{
+			if(salaryOne > salaryTwo)
+			{
+				retorno = -1;
+			}
+		}
+	}
+
+	return retorno;
+}
+
+int employee_compare_hours(void *one, void *two)
+{
+	int retorno;
+	int hoursOne;
+	int hoursTwo;
+	Employee *first;
+	Employee *second;
+
+	retorno = -1;
+	first = (Employee*) one;
+	second = (Employee*) two;
+
+	if((employee_getHorasTrabajadas(first, &hoursOne) == 0) && (employee_getHorasTrabajadas(second, &hoursTwo) == 0))
+	{
+		retorno = 0;
+		if(hoursOne < hoursTwo)
+		{
+			retorno = 1;
+		}
+		else
+		{
+			if(hoursOne > hoursTwo)
+			{
+				retorno = -1;
+			}
+		}
+	}
+
+	return retorno;
+}
+
