@@ -97,14 +97,14 @@ int FormatearCadena(char cadena[]) {
 
 	int retorno;
 	int i;
-	int tamaño;
+	int tam;
 
 	retorno = 0;
-	tamaño = strlen(cadena);
+	tam = strlen(cadena);
 	strlwr(cadena);
 
 	if (cadena != NULL) {
-		for (i = 0; i < tamaño; i++) {
+		for (i = 0; i < tam; i++) {
 			if (i == 0 || cadena[i - 1] == 32) {
 				cadena[i] = toupper(cadena[i]);
 			}
