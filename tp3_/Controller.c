@@ -101,7 +101,7 @@ int controller_removeEmployee(LinkedList *pArrayListEmployee)
 	int retorno;
 
 	controller_ListEmployee(pArrayListEmployee);
-	IngresarEnteroValidado("Ingrese el id del empleado que desea eliminar\n", 0, 1000, &idABuscar);
+	IngresarEnteroValidado("Ingrese el id del empleado que desea eliminar\n", 0, 2000, &idABuscar);
 	pos = findEmployee_by_Id(pArrayListEmployee, idABuscar);
 	retorno = -1;
 
@@ -178,7 +178,7 @@ int controller_editEmployee(LinkedList *pArrayListEmployee)
 	{
 
 		controller_ListEmployee(pArrayListEmployee);
-		IngresarEnteroValidado("Ingrese el id del empleado que desea modificar: ", 0, 1000, &idABuscar);
+		IngresarEnteroValidado("Ingrese el id del empleado que desea modificar: ", 0, 2000, &idABuscar);
 		pos = findEmployee_by_Id(pArrayListEmployee, idABuscar);
 
 		if (pos != -1)
