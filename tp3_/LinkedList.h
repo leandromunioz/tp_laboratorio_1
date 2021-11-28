@@ -34,22 +34,22 @@ struct LinkedList
 
 
 //Publicas
-LinkedList* ll_newLinkedList(void); // crea uno nuevo(constructor)
-int ll_len(LinkedList* this); //devuelve la cantidad de elementos en la lista
+LinkedList* ll_newLinkedList(void);
+int ll_len(LinkedList* this);
 Node* test_getNode(LinkedList* this, int nodeIndex);
 int test_addNode(LinkedList* this, int nodeIndex,void* pElement);
-int ll_add(LinkedList* this, void* pElement); // agrega uno (alta)
-void* ll_get(LinkedList* this, int index); //obtener uno
-int ll_set(LinkedList* this, int index,void* pElement); //modificar uno
-int ll_remove(LinkedList* this,int index);// borrar uno
-int ll_clear(LinkedList* this);// vacia la lista
-int ll_deleteLinkedList(LinkedList* this); //elimina la lista
-int ll_indexOf(LinkedList* this, void* pElement);//indice del elemento. (momentanea, cambia si se ordena).
-int ll_isEmpty(LinkedList* this); // me dice si hay uno cargado o no.
-int ll_push(LinkedList* this, int index, void* pElement); // pone uno en la posicion que indiques
-void* ll_pop(LinkedList* this,int index); // elimina el elemento y me devuelve los datos de los que se elimino.
-int ll_contains(LinkedList* this, void* pElement); // me dice si el elemento esta en la lista o no.
-int ll_containsAll(LinkedList* this,LinkedList* this2);// me dice si una lista esta dentro de la otroa lista.
-LinkedList* ll_subList(LinkedList* this,int from,int to);// crea una sublista desde las posiciones que le de
-LinkedList* ll_clone(LinkedList* this);// clona una lista
-int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order); //ordena segun la funcion de ordenamiento que le pasemos.
+int ll_add(LinkedList* this, void* pElement);
+void* ll_get(LinkedList* this, int index);
+int ll_set(LinkedList* this, int index,void* pElement);
+int ll_remove(LinkedList* this,int index);
+int ll_clear(LinkedList* this);
+int ll_deleteLinkedList(LinkedList* this);
+int ll_indexOf(LinkedList* this, void* pElement);
+int ll_isEmpty(LinkedList* this);
+int ll_push(LinkedList* this, int index, void* pElement);
+void* ll_pop(LinkedList* this,int index);
+int ll_contains(LinkedList* this, void* pElement);
+int ll_containsAll(LinkedList* this,LinkedList* this2);
+LinkedList* ll_subList(LinkedList* this,int from,int to);
+LinkedList* ll_clone(LinkedList* this);
+int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
